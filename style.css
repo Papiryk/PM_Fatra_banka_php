@@ -1,0 +1,68 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#111;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}
+
+#sidenav a {
+  padding:6px 8px 6px 16px;
+  text-decoration: none;
+  font-size:25px;
+  color: #818181;
+  display:block;
+}
+
+#sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.main{
+  text-align: center;
+  padding: 0px 10px;
+}
+
+#register_form{
+  height: 40%;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+
+#login_form{
+  height: 40%;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+
+#home_text {
+  text-align: center;
+  font-size: 1.5em;
+  
+}
+
+#login_link {
+  font-size: 1.5em;
+  display: grid;
+  justify-content: center;
+}
