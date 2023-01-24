@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'dbconnect.php';
+error_reporting(E_ERROR | E_PARSE);
 
 function validate($data){
 
@@ -17,14 +18,6 @@ if(isset($_POST['login']) && isset($_POST['password'])) {
 $login = validate($_POST['login']);
 $password = validate($_POST['password']);
 
-// if(empty($login)){
-//     header("Location login.php?error=Login is required");
-//     exit();
-// }else if(empty($password)){
-//     header("Location: login.php?error=Password is required");
-//     exit();
-// }
-
 $sql = "SELECT * FROM klienti WHERE login = '$login' AND password = '$password'";
     
 $result = mysqli_query($conn, $sql);
@@ -38,12 +31,11 @@ if (mysqli_num_rows($result) === 1) {
         $_SESSION['id_klienta'] = $row['id_klienta'];
         header("Location: home.php");
         exit();
+    }else{
+        header("Location: login.php?error=Zly login alebo heslo");
+        exit();
+        }
     }
-    }
-    // else{
-    //         header("Location: index.php?error=Incorrect login or password");
-    //     }
-
 // else{
 //     header("Location: index.php");
 //     exit();
