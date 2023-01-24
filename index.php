@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
         <?php
-    include_once 'style.css';
+    include 'style.css';
     ?>
     </style>
     <title>Domov</title>

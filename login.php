@@ -1,28 +1,74 @@
 <?php
-require_once 'dbconnect.php';
 session_start();
+include 'dbconnect.php';
 
-if ($_SERVER["REQUEST_METHOD"] == 'POST'){
-    $login = mysqli_real_escape_string($conn, $_POST['login']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
+function validate($data){
 
-    $sql = "SELECT login, password FROM klienti WHERE login = '$login' AND password = '$password'";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $active = $row['active'];
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+if(isset($_POST['login']) && isset($_POST['password'])) {
+    validate($data);
+}
+
+$login = validate($_POST['login']);
+$password = validate($_POST['password']);
+
+// if(empty($login)){
+//     header("Location login.php?error=Login is required");
+//     exit();
+// }else if(empty($password)){
+//     header("Location: login.php?error=Password is required");
+//     exit();
+// }
+
+$sql = "SELECT * FROM klienti WHERE login = '$login' AND password = '$password'";
     
-    $count = mysqli_num_rows($result);
+$result = mysqli_query($conn, $sql);
+    
+if (mysqli_num_rows($result) === 1) {
+    $row = mysqli_fetch_assoc($result);
+    if ($row['login'] === $login && $row['password'] === $password) {
+        echo "Logged in!";
+        $_SESSION['login'] = $row['login'];
+        $_SESSION['meno'] = $row['meno'];
+        $_SESSION['id_klienta'] = $row['id_klienta'];
+        header("Location: home.php");
+        exit();
+    }
+    }
+    // else{
+    //         header("Location: index.php?error=Incorrect login or password");
+    //     }
 
-if($count == 1){
-    session_register("login");
-    $_SESSION['login_user'] = $login;
-    echo "<h1>Login successful</h1>";
-    echo '<script>window.location = "index.php" </script>';
-} else{
-    echo "<h1>Login failed. Invalid login or password</h1>";
-}
-}
+// else{
+//     header("Location: index.php");
+//     exit();
+// }
 
+// if ($_SERVER["REQUEST_METHOD"] == 'POST'){
+//     $login = mysqli_real_escape_string($conn, $_POST['login']);
+//     $password = mysqli_real_escape_string($con, $_POST['password']);
+
+//     $sql = "SELECT login, password FROM klienti WHERE login = '$login' AND password = '$password'";
+//     $result = mysqli_query($con, $sql);
+//     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+//     $active = $row['active'];
+    
+//     $count = mysqli_num_rows($result);
+
+// if($count == 1){
+//     session_register("login");
+//     $_SESSION['login_user'] = $login;
+//     echo "<h1>Login successful</h1>";
+//     echo '<script>window.location = "index.php" </script>';
+// } else{
+//     echo "<h1>Login failed. Invalid login or password</h1>";
+// }
+// }
 
 ?>
 <!DOCTYPE html>
@@ -35,10 +81,10 @@ if($count == 1){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Login</title>
-    <style>
-        <?php
-    include_once 'style.css';
-    
+<style>
+<?php 
+    include 'style.css';
+
     ?>
     </style>
 </head>

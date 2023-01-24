@@ -40,7 +40,7 @@ echo '<script>window.location = "reg_success.php" </script>';
     <title>Register</title>
     <style>
         <?php
-    include_once 'style.css';
+    include 'style.css';
     ?>
     </style>
 
