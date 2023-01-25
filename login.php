@@ -89,6 +89,7 @@ if (mysqli_num_rows($result) === 1) {
     echo file_get_contents("nav.php");
     ?>
     <div class="container">
+        <h1>Prihlásenie</h1>
         <form action="" method="POST" class="col-3" id="login_form">
             <div class="column">
                 <div class="col-md-6">

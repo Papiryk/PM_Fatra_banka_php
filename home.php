@@ -21,8 +21,13 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
     <title>Domov</title>
 </head>
 <body>
-    <h1>Hello, <?php echo $_SESSION['login']; ?></h1>
-    <a href="logout.php">Logout</a>
+<?php
+    echo file_get_contents("lognav.php");
+    ?>
+    <div class="container">
+
+        <h1>Vitajte, <?php echo $_SESSION['login']; ?></h1>
+    </div>
 </body>
 </html>
 <?php

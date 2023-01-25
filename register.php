@@ -13,15 +13,28 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     $login = $_POST['login'];
     $password = $_POST['password'];
 
+    $iban = rand() . "\n";
+
     
     $sql = "INSERT INTO `klienti` (`meno`, `priezvisko`, `mesto`, `ulica`, `popisne_cislo`, `psc`, `cislo_op`, `login`, `password`)
 VALUES ('$meno', '$priezvisko', '$mesto', '$ulica',
     '$popisne_cislo', '$psc', '$cislo_op', '$login', '$password')";
 
+    
+
 if (mysqli_query($conn, $sql)){
-    echo "<h2>Data stored succesfully</h2>";
+    echo "<h2>Klient bol úspešne vytvorený</h2>";
 } else {
-    echo "ERROR" . mysqli_error($conn);
+    echo "ERROR KLIENT" . mysqli_error($conn);
+}
+$klient_id = mysqli_insert_id($conn);
+echo "<h2>Dostal som klient ID</h2>";
+$sql2 = "INSERT INTO `ucty` (`id_klienta`, `iban`, `typ_uctu`, `stav_debetnej_karty`, `stav_kreditnej_karty`) VALUES ('$klient_id', 'SK' + $iban, 'bezny', 300, 0)"; 
+
+if (mysqli_query($conn, $sql2)){
+    echo "<h2>Ucet bol uspesne vytvoreny</h2>";
+} else {
+    echo "ERROR UCET" . mysqli_error($conn);
 }
 
 mysqli_close($conn);
@@ -56,6 +69,7 @@ echo '<script>window.location = "reg_success.php" </script>';
 
 
     <div class="container">
+        <h1>Registrácia</h1>
         <form method="POST" action="register.php" class="col-3" id="register_form">
             <div class="column">
                 <div class="col-md-6">
