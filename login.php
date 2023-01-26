@@ -86,7 +86,7 @@ if (mysqli_num_rows($result) === 1) {
     </div>
 
     <?php
-    echo file_get_contents("nav.php");
+    echo file_get_contents("nav.php")
     ?>
     <div class="container">
         <h1>Prihlásenie</h1>

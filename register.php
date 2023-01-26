@@ -67,7 +67,6 @@ echo '<script>window.location = "reg_success.php" </script>';
     echo file_get_contents("nav.php")
     ?>
 
-
     <div class="container">
         <h1>Registrácia</h1>
         <form method="POST" action="register.php" class="col-3" id="register_form">

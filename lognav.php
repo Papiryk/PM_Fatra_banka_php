@@ -16,6 +16,7 @@ session_start();
     <div id="sidenav">
         <a href="home.php">Domov</a>
         <a href="ucet.php">Účet</a>
+        <a href="platba.php">Platba</a>
         <a href="logout.php">Logout</a>
     </div>
 </body>
