@@ -100,7 +100,6 @@ if (mysqli_num_rows($result) === 1) {
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required><br><br>
             </div>
-
             <button type="submit" class="btn btn-success">Prihlásiť</button>
         </form>
     </div>

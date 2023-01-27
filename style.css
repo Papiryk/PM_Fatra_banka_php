@@ -71,6 +71,7 @@ a {
   justify-content: center;
 }
 
-a {
-  
+.pomoc_domov {
+  font-size: 2em;
+  color: blue;
 }
