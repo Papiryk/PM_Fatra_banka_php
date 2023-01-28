@@ -2,7 +2,7 @@
 session_start();
 include "dbconnect.php";
 
-$datum_splatnosti = date('d.m.Y', strtotime('+2 day', time()));
+// $datum_splatnosti = date('d.m.Y', strtotime('+2 day', time()));
 
 if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
 ?>
@@ -57,12 +57,12 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
                 </div>
                 <div class="col-md-6">
                     <label for="poznamka">Poznámka</label>
-                    <input type="text" id="poznamka" name="poznamka" required><br><br>
+                    <input type="text" id="poznamka" name="poznamka"><br><br>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <label for="datum_splatnosti">Dátum splatnosti</label>
                     <?php echo  $datum_splatnosti ?><br><br>
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-success">Poslať</button>
             </div>
         </form>
@@ -79,7 +79,6 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
                 <th>Suma</th>
                 <th>Poznámka</th>
                 <th>Dátum odoslania</th>
-                <th>Dátum splatnosti</th>
             </tr>
     <?php 
     $id_klienta = $_SESSION['id_klienta'];
@@ -87,7 +86,9 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
     $result = $conn->query($sql);
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
-            echo "<tr><td>" .$row['id_transakcie']. "</td><td>". $row['iban_odosielatela']. "</td><td>". $row['iban_prijimatela']. "</td> <td>". $row['variabilny_symbol']. "</td><td>". $row['specificky_symbol']. "</td> <td>". $row['konstantny_symbol']. "</td><td>". $row['suma']. "</td><td>". $row['poznamka']. "</td><td>". $row['datum_odoslania']. "</td><td>". $row['datum_splatnosti']. "</td><tr>";    }
+            echo "<tr><td>" .$row['id_transakcie']. "</td><td>". $row['iban_odosielatela']. "</td><td>". $row['iban_prijimatela']. "</td> <td>"
+            . $row['variabilny_symbol']. "</td><td>". $row['specificky_symbol']. "</td> <td>". $row['konstantny_symbol']. "</td><td>"
+            . $row['suma']. "</td><td>". $row['poznamka']. "</td><td>". $row['datum_odoslania']. "</td><tr>";}
             echo"</table>";
     }
     else{
@@ -116,11 +117,12 @@ VALUES ('$id_klienta', '$iban_odosielatela', '$iban_prijimatela', '$variabilny_s
     '$specificky_symbol', '$suma', '$poznamka')";
 
 if (mysqli_query($conn, $sql)){
+    $stav_prijimatela_update = mysqli_query($conn, "UPDATE `ucty` SET `stav_debetnej_karty` = `stav_debetnej_karty` + $suma WHERE `iban` = $iban_prijimatela");
+    $stav_odosielatela_update = mysqli_query($conn, "UPDATE `ucty` SET `stav_debetnej_karty` = `stav_debetnej_karty` - $suma WHERE `iban` = $iban_odosielatela");
     echo "";
 } else {
     echo "Platba neúspešná" . mysqli_error($conn);
 }
-
 mysqli_close($conn);
 }
 
@@ -129,4 +131,3 @@ mysqli_close($conn);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-    
