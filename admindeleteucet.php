@@ -11,26 +11,33 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Nav</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <style>
+        <?php
+    include 'style.css';
+    ?>
+    </style>
+    <title>Admin vymazať účet</title>
+    
 </head>
 <body>
-    <div id="sidenav">
-        <a href="adminpage.php">Domov</a>
-        <a href="addklient.php">Pridať klienta</a>
-        <a href="deleteklient.php">Odstrániť klienta</a>
-        <a href="adminadducet.php">Pridať účet</a>
-        <a href="admindeleteucet.php">Odstrániť účet</a>
-        <a href="adminplatba.php">Platba</a>
-        <a href="logout.php">Logout</a>
+    
     </div>
+    <?php
+    echo file_get_contents("adminnav.php");
+    ?>
+
+<h1>Správa účtov</h1>
+
+
+
+    
 </body>
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
 
 <?php
 }
