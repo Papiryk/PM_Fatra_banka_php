@@ -18,7 +18,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
     <div id="sidenav">
         <a href="adminpage.php">Domov</a>
         <a href="addklient.php">Pridať klienta</a>
-        <a href="deleteklient.php">Odstrániť klienta</a>
+        <a href="admindeleteklient.php">Odstrániť klienta</a>
         <a href="adminadducet.php">Pridať účet</a>
         <a href="admindeleteucet.php">Odstrániť účet</a>
         <a href="adminplatba.php">Platba</a>

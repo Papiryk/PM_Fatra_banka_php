@@ -5,6 +5,30 @@ html{
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* display: grid;
+  place-items: center; */
+  margin-bottom: 400px;
+  background: linear-gradient(-45deg, #FA1C00, #760BD4, #009EEB, #0BD41D);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  margin-bottom: 150px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 a {
@@ -47,7 +71,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 #login_form{
@@ -56,7 +80,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 #home_text {
@@ -75,3 +99,13 @@ a {
   font-size: 2em;
   color: blue;
 }
+
+.pomoc_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */

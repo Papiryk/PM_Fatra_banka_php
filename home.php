@@ -28,6 +28,7 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
 
         <h1>Vitajte, <?php echo $_SESSION['login']; ?></h1>
     </div>
+    <p></p>
 </body>
 </html>
 <?php
