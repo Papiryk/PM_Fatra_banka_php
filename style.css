@@ -80,6 +80,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  align-items: center;
 }
 
 #home_text {
@@ -98,6 +99,16 @@ a {
   font-size: 2em;
   color: blue;
 }
+
+.pomoc_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
 
 .pomoc_form {
   display: flex;

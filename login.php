@@ -66,9 +66,12 @@ if (mysqli_num_rows($result) === 1) {
                 <div class="col-md-4">
                     <label for="login">Login</label>
                     <input type="text" id="login" name="login" class="form-control" required><br>
+                    <input type="text" id="login" name="login" class="form-control" required><br>
                 </div>
                 <div class="col-md-4">
                     <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required><br>
+                </div>
                     <input type="password" id="password" name="password" class="form-control" required><br>
                 </div>
             <button type="submit" class="btn btn-success">Prihlásiť</button>
