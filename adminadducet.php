@@ -28,10 +28,26 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
     ?>
 
 <h1>Správa účtov</h1>
+        <h1>Vytvoriť účet</h1>
+        <form method="POST" action="" class="col-3" id="register_form">
+            <div class="column">
+                <div class="col-md-8">
+                    <label for="id_klienta">ID klienta</label>
+                    <input type="text" id="id_klienta" name="id_klienta" class="form-control" required><br>
+                </div>
+                <div class="col-md-8">
+                    <label for="typ_uctu">Typ účtu</label>
+                    <select name="typ_uctu" id="typ_uctu"  class="form-control">
+                        <option value=""></option>
+                        <option value="bezny">bežný</option>
+                        <option value="sporiaci">sporiaci</option>
+                    </select>
+                    <br>
+                </div>
+                <button type="submit" class="btn btn-primary">Vytvoriť</button>
+                
+        </form>
 
-
-
-    
 </body>
 </html>
 
@@ -41,4 +57,22 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
 
 <?php
 }
+require_once 'dbconnect.php';
+
+if ($_SERVER["REQUEST_METHOD"] == 'POST'){
+    $id_klienta = $_POST['id_klienta'];
+    $typ_uctu = $_POST['typ_uctu'];
+    $iban = rand(101, 999) . "\n";
+
+
+$sql = "INSERT INTO `ucty` (`id_klienta`, `iban`, `typ_uctu`, `stav_debetnej_karty`, `stav_kreditnej_karty`) VALUES ('$id_klienta', '$iban', '$typ_uctu', 300, 0)";     
+
+if (mysqli_query($conn, $sql)){
+    echo "<h2>Účet bol úspešne vytvorený</h2>";
+} else {
+    echo "ERROR KLIENT" . mysqli_error($conn);
+}
+}
+
+
 ?>

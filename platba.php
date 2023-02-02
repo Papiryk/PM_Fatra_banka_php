@@ -28,43 +28,41 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
     echo file_get_contents("lognav.php");
     ?>
     <h1>Platba</h1>
-    <div class="container">
         <form method="POST" class="col-3" id="login_form">
             <div class="column">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="iban_odosielatela">IBAN odosielateľa</label>
-                    <input type="text" id="iban_odosielatela" name="iban_odosielatela" required><br><br>
+                    <input type="text" id="iban_odosielatela" name="iban_odosielatela" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="iban_prijimatela">IBAN prijímateľa</label>
-                    <input type="text" id="iban_prijimatela" name="iban_prijimatela" required><br><br>
+                    <input type="text" id="iban_prijimatela" name="iban_prijimatela" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="variabilny_symbol">Variabilný symbol</label>
-                    <input type="number" id="variabilny_symbol" name="variabilny_symbol"><br><br>
+                    <input type="number" id="variabilny_symbol" name="variabilny_symbol" class="form-control"><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="konstantny_symbol">Konštantný symbol</label>
-                    <input type="number" id="konstantny_symbol" name="konstantny_symbol"><br><br>
+                    <input type="number" id="konstantny_symbol" name="konstantny_symbol" class="form-control"><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="specificky_symbol">Špecifický symbol</label>
-                    <input type="number" id="specificky_symbol" name="specificky_symbol"><br><br>
+                    <input type="number" id="specificky_symbol" name="specificky_symbol" class="form-control"><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="suma">Suma</label>
-                    <input type="number" id="suma" name="suma" required><br><br>
+                    <input type="number" id="suma" name="suma" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="poznamka">Poznámka</label>
-                    <input type="text" id="poznamka" name="poznamka"><br><br>
+                    <input type="text" id="poznamka" name="poznamka" class="form-control"><br>
                 </div>
                 <!-- <div class="col-md-6">
                     <label for="datum_splatnosti">Dátum splatnosti</label>
                     <?php echo  $datum_splatnosti ?><br><br>
                 </div> -->
-                <button type="submit" class="btn btn-success">Poslať</button>
-            </div>
+                <button type="submit" class="btn btn-success">Poslať</button><br><br>
         </form>
     </div>
     <h1>História platieb</h1>

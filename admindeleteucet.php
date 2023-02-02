@@ -28,6 +28,16 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
     ?>
 
 <h1>Správa účtov</h1>
+        <h1>Vymazať účet</h1>
+        <form method="POST" action="" class="col-3" id="register_form">
+            <div class="column">
+                <div class="col-md-8">
+                    <label for="id_uctu">ID účtu</label>
+                    <input type="text" id="id_uctu" name="id_uctu" class="form-control" required><br>
+                </div>
+                <button type="submit" class="btn btn-primary">Vytvoriť</button>
+                
+        </form>
 
 
 
@@ -40,5 +50,20 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
 <?php
+}
+
+require_once 'dbconnect.php';
+
+if ($_SERVER["REQUEST_METHOD"] == 'POST'){
+    $id_uctu = $_POST['id_uctu'];
+
+
+$sql = "DELETE FROM `ucty` WHERE `id_uctu` = '$id_uctu'";     
+
+if (mysqli_query($conn, $sql)){
+    echo "<h2>Účet bol úspešne vymazaný</h2>";
+} else {
+    echo "ERROR KLIENT" . mysqli_error($conn);
+}
 }
 ?>

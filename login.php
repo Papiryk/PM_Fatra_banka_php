@@ -36,32 +36,6 @@ if (mysqli_num_rows($result) === 1) {
         exit();
         }
     }
-// else{
-//     header("Location: index.php");
-//     exit();
-// }
-
-// if ($_SERVER["REQUEST_METHOD"] == 'POST'){
-//     $login = mysqli_real_escape_string($conn, $_POST['login']);
-//     $password = mysqli_real_escape_string($con, $_POST['password']);
-
-//     $sql = "SELECT login, password FROM klienti WHERE login = '$login' AND password = '$password'";
-//     $result = mysqli_query($con, $sql);
-//     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-//     $active = $row['active'];
-    
-//     $count = mysqli_num_rows($result);
-
-// if($count == 1){
-//     session_register("login");
-//     $_SESSION['login_user'] = $login;
-//     echo "<h1>Login successful</h1>";
-//     echo '<script>window.location = "index.php" </script>';
-// } else{
-//     echo "<h1>Login failed. Invalid login or password</h1>";
-// }
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +50,6 @@ if (mysqli_num_rows($result) === 1) {
 <style>
 <?php 
     include 'style.css';
-
     ?>
     </style>
 </head>
@@ -88,21 +61,18 @@ if (mysqli_num_rows($result) === 1) {
     <?php
     echo file_get_contents("nav.php")
     ?>
-    <div class="container">
         <h1>Prihlásenie</h1>
         <form action="" method="POST" class="col-3" id="login_form">
-            <div class="column">
                 <div class="col-md-6">
                     <label for="login">Login</label>
-                    <input type="text" id="login" name="login" required><br><br>
+                    <input type="text" id="login" name="login" class="form-control" required><br>
                 </div>
                 <div class="col-md-6">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required><br><br>
-            </div>
+                    <input type="password" id="password" name="password" class="form-control" required><br>
+                </div>
             <button type="submit" class="btn btn-success">Prihlásiť</button>
         </form>
-    </div>
 </body>
 </html>
 

@@ -66,52 +66,56 @@ echo '<script>window.location = "reg_success.php" </script>';
     <?php
     echo file_get_contents("nav.php")
     ?>
-
-    <div class="container">
         <h1>Registrácia</h1>
-        <form method="POST" action="register.php" class="col-3" id="register_form">
-            <div class="column">
-                <div class="col-md-6">
+            <form method="POST" action="register.php" class="col-3" id="register_form">
+                <div class="col-md-12">
                     <label for="meno">Meno</label>
-                    <input type="text" id="meno" name="meno" required><br><br>
+                    <br>
+                    <input type="text" id="meno" name="meno" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="priezvisko">Priezvisko</label>
-                    <input type="text" id="priezvisko" name="priezvisko" required><br><br>
+                    <br>
+                    <input type="text" id="priezvisko" name="priezvisko" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="mesto">Mesto</label>
-                    <input type="text" id="mesto" name="mesto" required><br><br>
+                    <br>
+                    <input type="text" id="mesto" name="mesto" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="ulica">Ulica</label>
-                    <input type="text" id="ulica" name="ulica" required><br><br>
+                    <br>
+                    <input type="text" id="ulica" name="ulica" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="popisne_cislo">Popisné číslo</label>
-                    <input type="text" id="popisne_cislo" name="popisne_cislo" required><br><br>
+                    <br>
+                    <input type="text" id="popisne_cislo" name="popisne_cislo" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="psc">PSČ</label>
-                    <input type="text" id="psc" name="psc" required><br><br>
+                    <br>
+                    <input type="text" id="psc" name="psc" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="cislo_op">Číslo OP</label>
-                    <input type="text" id="cislo_op" name="cislo_op" required><br><br>
+                    <br>
+                    <input type="text" id="cislo_op" name="cislo_op" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="login">Login</label>
-                    <input type="text" id="login" name="login" required><br><br>
+                    <br>
+                    <input type="text" id="login" name="login" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required><br><br>
+                    <br>
+                    <input type="password" id="password" name="password" class="form-control" required><br>
                 </div>
                 <button type="submit" class="btn btn-success">Registrovať</button>
-                
         </form>
-    </div>
-</body>
+    </body>
 </html>
 
 

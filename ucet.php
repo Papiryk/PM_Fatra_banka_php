@@ -57,7 +57,7 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
     </table>
 
     <h1>Pozvať priateľa</h1>
-    <h6>Pozvaním priateľa získate bonus až 100€. Neváhajte a využite túto skvelú ponuku. Kontaktujte nás mailom na <a href="mailto:pozvipriatela@fatrabanka.sk">pozvipriatela@fatrabanka.sk</a> a my Vám zašleme link pre Vášho priateľa</h6>
+    <h6>Pozvaním priateľa získate bonus až 100€. Neváhajte a využite túto skvelú ponuku. Kontaktujte nás mailom na <a href="mailto:pozvipriatela@fatrabanka.sk">pozvipriatela@fatrabanka.sk</a> a my Vám zašleme link pre Vášho priateľa.</h6>
     <small class="text-muted">Ponuka platí iba 3 mesiace od registrácie</small>
 
     

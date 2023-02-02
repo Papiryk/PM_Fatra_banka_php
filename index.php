@@ -25,10 +25,11 @@
 
 <hr class="mt-0 mb-4">
                     <p id="home_text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Accusantium libero eaque in, cumque non dolorem ipsum, beatae adipisci ea deserunt a velit dicta, quos vero.
-                        Labore accusantium facilis voluptate in?
+                        Vitajte v internet bankingu Fatra Banky! Naša banka Vám ponúka vedenie bežné ako aj sporiaceho účtu.
+                        Každý nový klient u nás dostane bonus 300€! Neváhajte a registrujte sa teraz!
                     </p>
+
+                    <img src="fatrabanka.jpg" alt="fatrabankalogo" width="800px">
 
 
     

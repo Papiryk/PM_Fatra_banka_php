@@ -27,7 +27,7 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
     ?>
     <h1>Pomoc</h1>
     <div class="container">
-        <form action="POST">
+        <form action="POST" class="pomoc_form">
             <div class="col-md-6">
                 <h4>Popíšte Váš problém</h4>
             </div>
