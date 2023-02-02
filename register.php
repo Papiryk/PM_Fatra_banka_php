@@ -68,47 +68,47 @@ echo '<script>window.location = "reg_success.php" </script>';
     ?>
         <h1>Registrácia</h1>
             <form method="POST" action="register.php" class="col-3" id="register_form">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label for="meno">Meno</label>
                     <br>
                     <input type="text" id="meno" name="meno" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="priezvisko">Priezvisko</label>
                     <br>
                     <input type="text" id="priezvisko" name="priezvisko" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="mesto">Mesto</label>
                     <br>
                     <input type="text" id="mesto" name="mesto" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="ulica">Ulica</label>
                     <br>
                     <input type="text" id="ulica" name="ulica" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="popisne_cislo">Popisné číslo</label>
                     <br>
                     <input type="text" id="popisne_cislo" name="popisne_cislo" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="psc">PSČ</label>
                     <br>
                     <input type="text" id="psc" name="psc" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="cislo_op">Číslo OP</label>
                     <br>
                     <input type="text" id="cislo_op" name="cislo_op" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="login">Login</label>
                     <br>
                     <input type="text" id="login" name="login" class="form-control" required><br>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="password">Password</label>
                     <br>
                     <input type="password" id="password" name="password" class="form-control" required><br>

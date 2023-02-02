@@ -29,7 +29,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
 
 <h1>Správa klientov</h1>
         <h1>Pridať klienta</h1>
-        <form method="POST" action="addklient.php" class="col-3" id="register_form">
+        <form method="POST" action="adminaddklient.php" class="col-3" id="register_form">
             <div class="column">
                 <div class="col-md-8">
                     <label for="meno">Meno</label>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST'){
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $iban = rand() . "\n";
+    $iban = rand(101, 999) . "\n";
 
     
     $sql = "INSERT INTO `klienti` (`meno`, `priezvisko`, `mesto`, `ulica`, `popisne_cislo`, `psc`, `cislo_op`, `login`, `password`)

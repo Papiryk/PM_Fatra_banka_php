@@ -63,11 +63,11 @@ if (mysqli_num_rows($result) === 1) {
     ?>
         <h1>Prihlásenie</h1>
         <form action="" method="POST" class="col-3" id="login_form">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="login">Login</label>
                     <input type="text" id="login" name="login" class="form-control" required><br>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" class="form-control" required><br>
                 </div>
