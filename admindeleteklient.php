@@ -28,13 +28,12 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
     ?>
 
 <h1>Správa klientov</h1>
-        <form action="deleteklient.php" method="POST" class="col-3" id="deleteklient_form">
+        <form action="admindeleteklient.php" method="POST" class="col-3" id="deleteklient_form">
                 <h1>Odstrániť klienta</h1>
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <label for="id_klienta">ID klienta</label>
                     <input type="number" id="id_klienta" name="id_klienta" class="form-control" required><br>
                 <button type="submit" class="btn btn-primary">Odstrániť</button>
-
         </form>
 
     

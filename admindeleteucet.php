@@ -35,7 +35,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['username'])){
                     <label for="id_uctu">ID účtu</label>
                     <input type="text" id="id_uctu" name="id_uctu" class="form-control" required><br>
                 </div>
-                <button type="submit" class="btn btn-primary">Vytvoriť</button>
+                <button type="submit" class="btn btn-primary">Odstrániť</button>
                 
         </form>
 

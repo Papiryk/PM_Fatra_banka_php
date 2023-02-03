@@ -76,7 +76,6 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
                 <th>Konštantný symbol</th>
                 <th>Suma</th>
                 <th>Poznámka</th>
-                <th>Dátum odoslania</th>
             </tr>
     <?php 
     $id_klienta = $_SESSION['id_klienta'];
@@ -86,7 +85,7 @@ if(isset($_SESSION['id_klienta']) && isset($_SESSION['login'])){
         while($row = $result->fetch_assoc()){
             echo "<tr><td>" .$row['id_transakcie']. "</td><td>". $row['iban_odosielatela']. "</td><td>". $row['iban_prijimatela']. "</td> <td>"
             . $row['variabilny_symbol']. "</td><td>". $row['specificky_symbol']. "</td> <td>". $row['konstantny_symbol']. "</td><td>"
-            . $row['suma']. "</td><td>". $row['poznamka']. "</td><td>". $row['datum_odoslania']. "</td><tr>";}
+            . $row['suma']. "</td><td>". $row['poznamka']. "</td><tr>";}
             echo"</table>";
     }
     else{
